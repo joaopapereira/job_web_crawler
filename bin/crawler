@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'crawler'
+
+require 'optparse'
+require 'pry'
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: crawler [options]"
+
+  opts.on('-i', '', 'Use Indeed') { |v| options[:use_indeed] = true }
+  opts.on('-c', '', 'Use Craigslist') { |v| options[:use_craiglist] = true }
+
+end.parse!
+
+
+puts ARGV
+options[:expressions] = ARGV
+crawler = Crawler::Crawler.new  
+crawler.run options
