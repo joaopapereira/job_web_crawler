@@ -9,7 +9,7 @@ module Searcher
     end
     def add_result(term, values)
         @mutex.synchronize do
-        @results[term.to_sym] = values
+            @results[term.to_sym] = values
         end
     end
     def results()

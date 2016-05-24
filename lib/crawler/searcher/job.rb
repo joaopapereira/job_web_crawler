@@ -17,6 +17,9 @@ module Searcher
         def description= description
             @description = description 
         end
+        def one_liner
+           "#{@title} #{@description}"
+        end
     end
 end
 end
