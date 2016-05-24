@@ -1,9 +1,9 @@
 module Crawler
 module Searcher
     class Job
-        def initialize()
-            @title
-            @description
+        def initialize
+            @title = ''
+            @description = ''
         end
         def title
             @title
