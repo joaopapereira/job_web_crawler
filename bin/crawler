@@ -11,6 +11,7 @@ OptionParser.new do |opts|
 
   opts.on('-i', '', 'Use Indeed') { |v| options[:use_indeed] = true }
   opts.on('-c', '', 'Use Craigslist') { |v| options[:use_craiglist] = true }
+  opts.on('-d', '', 'Use Dice') { |v| options[:use_dice] = true }
 
 
   opts.on('', '--java', 'Output as a java file') {|v| options[:output_java] = true}
@@ -19,5 +20,5 @@ end.parse!
 
 puts ARGV
 options[:expressions] = ARGV
-crawler = Crawler::Crawler.new  
+crawler = Crawler::Crawler.new
 crawler.run options
